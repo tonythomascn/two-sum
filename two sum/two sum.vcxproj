@@ -14,6 +14,7 @@
     <ProjectGuid>{A0AB2271-BB7A-499B-91F3-777797539915}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>twosum</RootNamespace>
+    <ProjectName>leetcode</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

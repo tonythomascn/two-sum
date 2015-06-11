@@ -49,14 +49,19 @@ vector<int> twoSum(vector<int>& nums, int target)
 int * twoSum(int* nums, int numsSize, int target)
 {
 	int *index = (int*)malloc(sizeof(int)*2);
+	index[0] = 0;
+	index[1] = 0;
 	int i, j;
 	for (i = numsSize - 1; i >= 0; i--) {
-		if (nums[i] <= target || target < 0)
-		for (j = i - 1; j >= 0; j--) {
-			if (target - nums[i] == nums[j]) {
-				index[0] = j + 1;
-				index[1] = i + 1;
-				return index;
+		if (nums[i] <= target || target < 0) {
+			for (j = 0; j < numsSize; j++) {
+				if (i != j) {
+					if (target - nums[i] == nums[j]) {
+						index[0] = i > j ? j + 1 : i + 1;
+						index[1] = j > i ? j + 1 : i + 1;
+						return index;
+					}
+				}
 			}
 		}
 	}
