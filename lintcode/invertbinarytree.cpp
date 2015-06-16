@@ -1,5 +1,6 @@
 
 // Definition of TreeNode:
+#include "stdafx.h"
 #include <cstdlib>
  class TreeNode {
  public:
