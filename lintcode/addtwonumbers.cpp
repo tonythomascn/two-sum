@@ -18,6 +18,7 @@ Given 3->1->5 and 5->9->2, return 8->0->8.
 */
 #include "stdafx.h"
 #include <cstdlib>
+#include <cstdio>
 struct ListNode {
      int val;
      ListNode *next;
@@ -93,77 +94,77 @@ public:
 
 };
 
-int main() {
-	Solution s;
-	ListNode* l1 = new ListNode(2);
-	ListNode* cur = l1;
-	cur->next = new ListNode(8);
-	cur = cur->next;
-	cur->next = new ListNode(2);
-	cur = cur->next;
-	cur->next = new ListNode(8);
-	cur = cur->next;
-	cur->next = new ListNode(2);
-	cur = cur->next;
-	cur->next = new ListNode(9);
-	cur = cur->next;
-	cur->next = new ListNode(6);
-	cur = cur->next;
-	cur->next = new ListNode(4);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	cur->next = new ListNode(2);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	cur->next = new ListNode(2);
-	cur = cur->next;
-	ListNode* l2 = new ListNode(5);
-	cur = l2;
-	cur->next = new ListNode(8);
-	cur = cur->next;
-	cur->next = new ListNode(9);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	cur->next = new ListNode(6);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	cur->next = new ListNode(1);
-	cur = cur->next;
-	cur->next = new ListNode(8);
-	cur = cur->next;
-	cur->next = new ListNode(7);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	cur = cur->next;
-	ListNode* l3 = new ListNode(9);
-	cur = l3;
-	for (int i = 1; i < 45; i++) {
-		cur->next = new ListNode(9);
-		cur = cur->next;
-	}
-	ListNode* l4 = new ListNode(9);
-	cur = l4;
-	for (int i = 1; i < 45; i++) {
-		cur->next = new ListNode(9);
-		cur = cur->next;
-	}
-	s.print(s.addLists(l3, l4));
-	ListNode* l5 = new ListNode(3);
-	cur = l5;
-	cur->next = new ListNode(1);
-	cur = cur->next;
-	cur->next = new ListNode(5);
-	ListNode* l6 = new ListNode(5);
-	cur = l6;
-	cur->next = new ListNode(9);
-	cur = cur->next;
-	cur->next = new ListNode(2);
-	s.print(s.addLists(l5, l6));
-	system("pause");
-}
+//int main() {
+//	Solution s;
+//	ListNode* l1 = new ListNode(2);
+//	ListNode* cur = l1;
+//	cur->next = new ListNode(8);
+//	cur = cur->next;
+//	cur->next = new ListNode(2);
+//	cur = cur->next;
+//	cur->next = new ListNode(8);
+//	cur = cur->next;
+//	cur->next = new ListNode(2);
+//	cur = cur->next;
+//	cur->next = new ListNode(9);
+//	cur = cur->next;
+//	cur->next = new ListNode(6);
+//	cur = cur->next;
+//	cur->next = new ListNode(4);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	cur->next = new ListNode(2);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	cur->next = new ListNode(2);
+//	cur = cur->next;
+//	ListNode* l2 = new ListNode(5);
+//	cur = l2;
+//	cur->next = new ListNode(8);
+//	cur = cur->next;
+//	cur->next = new ListNode(9);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	cur->next = new ListNode(6);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	cur->next = new ListNode(1);
+//	cur = cur->next;
+//	cur->next = new ListNode(8);
+//	cur = cur->next;
+//	cur->next = new ListNode(7);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	cur = cur->next;
+//	ListNode* l3 = new ListNode(9);
+//	cur = l3;
+//	for (int i = 1; i < 45; i++) {
+//		cur->next = new ListNode(9);
+//		cur = cur->next;
+//	}
+//	ListNode* l4 = new ListNode(9);
+//	cur = l4;
+//	for (int i = 1; i < 45; i++) {
+//		cur->next = new ListNode(9);
+//		cur = cur->next;
+//	}
+//	s.print(s.addLists(l3, l4));
+//	ListNode* l5 = new ListNode(3);
+//	cur = l5;
+//	cur->next = new ListNode(1);
+//	cur = cur->next;
+//	cur->next = new ListNode(5);
+//	ListNode* l6 = new ListNode(5);
+//	cur = l6;
+//	cur->next = new ListNode(9);
+//	cur = cur->next;
+//	cur->next = new ListNode(2);
+//	s.print(s.addLists(l5, l6));
+//	system("pause");
+//}
