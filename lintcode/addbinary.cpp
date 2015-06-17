@@ -12,11 +12,11 @@ string addBinary(string& a, string& b) {
 	return s.substr(s.find("1"));
 }
 
-int main()
-{
-	string a = "0";
-	string b = "0";
-	std::cout << addBinary(a, b) << std::endl;
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	string a = "0";
+//	string b = "0";
+//	std::cout << addBinary(a, b) << std::endl;
+//	system("pause");
+//	return 0;
+//}
