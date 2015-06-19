@@ -24,11 +24,11 @@ int singleNumber(vector<int> &A) {
 	}
 	return result;
 }
-
-int main() {
-	vector<int> A{ 1, 2, 2, 1, 3, 4, 3 };
-	
-	std::cout << singleNumber(A);
-	system("pause");
-	return 0;
-}
+//
+//int main() {
+//	vector<int> A{ 1, 2, 2, 1, 3, 4, 3 };
+//	
+//	std::cout << singleNumber(A);
+//	system("pause");
+//	return 0;
+//}
