@@ -44,5 +44,11 @@
     <ClCompile Include="binarysearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="binarytreeinordertraversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binarytreepreordertraversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
