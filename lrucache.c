@@ -4,111 +4,112 @@ Design and implement a data structure for Least Recently Used (LRU) cache. It sh
 get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
 set(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 
-pure c in double linked list
+pure c in doubly linked list
 */
 #include <stdio.h>
-struct item_t{
+#define HASH 10000
+struct Node{
 int key;
 int value;
-struct item_t* prev;
-struct item_t* next;
+struct Node* prev;
+struct Node* next;
 };
-int size = 0;
+struct List {
+	int count;
+	struct Node*first;
+	struct Node*last;
+};
+struct Node* array[HASH];
 int maxsize = 0;
-struct item_t * head = NULL;
-struct item_t * tail = NULL;
+struct List *cachelist = NULL;
 
 void lruCacheInit(int capacity) {
 	maxsize = capacity;
+	memset(&array, 0, HASH);
+	cachelist = calloc(1, sizeof(struct List));
+	cachelist->count = 0;
+	cachelist->first = NULL;
+	cachelist->last = NULL;
 }
 
 void lruCacheFree() {
-	struct item_t *tmp = head;
-	struct item_t *del;
-	while (tmp) {
-		del = tmp;
-		tmp = tmp->next;
-		free(del);
+	struct Node *cur;
+	for (cur = cachelist->first; cur != NULL; cur = cur->next) {
+		if (cur->prev)
+			free(cur->prev);
 	}
-	head = NULL;
-	tail = NULL;
-	size = 0;
 }
 
-void lruTouch(struct item_t* node) {
-	if (node == tail)
+void lruPushBack(struct List*cachelist, struct Node* node) {
+	if (cachelist->last == NULL) {
+		cachelist->first = node;
+		cachelist->last = node;
+	}
+	else {
+		cachelist->last->next = node;
+		node->prev = cachelist->last;
+		cachelist->last = node;
+	}
+	return;
+}
+
+
+void lruTouch(struct List* cachelist, struct Node* node) {
+	if (node == cachelist->last)
 		return;
 
-	if (node == head && node->next) {
-		head = node->next;
-		head->prev = NULL;
+	if (node == cachelist->first && node->next) {
+		cachelist->first = node->next;
+		cachelist->first->prev = NULL;
 	}
 
 	if (node->next) {
 		if (node->prev)
 			node->prev->next = node->next;
-		else
-			;
 	}
-	if (node->prev && node->next)
-		node->next->prev = node->prev;
-	
-	if (tail) {
-		tail->next = node;
-		node->prev = tail;
+	if (node->prev) {
+		if (node->next)
+			node->next->prev = node->prev;
 	}
-	tail = node;
-	tail->next = NULL;
 
-	if (!head)
-		head = node;
+	if (cachelist->last) {
+		cachelist->last->next = node;
+		node->prev = cachelist->last;
+	}
+	cachelist->last = node;
+	cachelist->last->next = NULL;
+
+	if (!cachelist->first)
+		cachelist->first = node;
 }
 
-void print() {
-	struct item_t * tmp = head;
-	while (tmp) {
-		printf("<%d, %d> ", tmp->key, tmp->value);
-		tmp = tmp->next;
-	}
-	printf("\n");
-}
+
 
 int lruCacheGet(int key) {
-	struct item_t * tmp = tail;
-	while (tmp) {
-		if (key == tmp->key) {
-			lruTouch(tmp);
-			return tmp->value;
-		}
-		tmp = tmp->prev;
+	if (array[key]) {
+		lruTouch(cachelist, array[key]);
+		//array[key] = tail;
+		return array[key]->value;
 	}
 	return -1;
 }
 
 void lruCacheSet(int key, int value) {
-	struct item_t * tmp = tail;
-	int found = 0;
-	while (tmp) {
-		if (tmp->key == key) {
-			found = 1;
-			break;
-		}
-		tmp = tmp->prev;
-	}
-
-	if (!found) {
-		if (size == maxsize) {
-			tmp = head;
-			if (head->next) {
-				head->next->prev = NULL;
-				head = head->next;
+	struct Node * tmp;
+	if (!array[key]){
+		if (cachelist->count == maxsize) {
+			tmp = cachelist->first;
+			array[cachelist->first->key] = NULL;
+			if (cachelist->first->next) {
+				cachelist->first->next->prev = NULL;
+				cachelist->first = cachelist->first->next;
 			}
 		}
 		else {
-			tmp = (struct item_t*)malloc(sizeof(struct item_t));
+			tmp = (struct Node*)malloc(sizeof(struct Node));
 			if (!tmp)
 				return;
-			size++;
+			cachelist->count++;
 		}
 		tmp->next = NULL;
 		tmp->prev = NULL;
@@ -116,31 +117,53 @@ void lruCacheSet(int key, int value) {
 		tmp->value = value;
 	}
 	else {
-		tmp->value = value;
+		tmp = array[key];
+		tmp->value = value;	
 	}
-	lruTouch(tmp);
+	lruTouch(cachelist, tmp);
+	array[key] = cachelist->last;
 }
 
-
-int main() {
-	lruCacheInit(3);
-	lruCacheSet(2, 1);
-	print();
-	lruCacheSet(2, 2);
-	print();
-	printf("%d\n", lruCacheGet(2));
-	lruCacheSet(1, 1);
-	print();
-	lruCacheSet(4, 1);
-	print();
-	printf("%d\n", lruCacheGet(2));
-	lruCacheSet(3, 1);
-	print();
-	printf("%d\n", lruCacheGet(2));
-	lruCacheSet(4, 1);
-	print();
-	printf("%d\n", lruCacheGet(2));
-	lruCacheFree();
-	system("pause");
-	return 0;
-}
+//void print() {
+//	struct Node * tmp = cachelist->first;
+//	while (tmp) {
+//		printf("<%d, %d> ", tmp->key, tmp->value);
+//		tmp = tmp->next;
+//	}
+//	printf("\n");
+//}
+//int main() {
+//	lruCacheInit(4);
+//	printf("-<2, %d>-\n", lruCacheGet(2));
+//	lruCacheSet(2, 1);
+//	print();
+//	lruCacheSet(2, 2);
+//	print();
+//	printf("-<2, %d>-\n", lruCacheGet(2));
+//	print();
+//	lruCacheSet(1, 1);
+//	print();
+//	lruCacheSet(4, 1);
+//	print();
+//	printf("-<10, %d>-\n", lruCacheGet(10));
+//	print();
+//	lruCacheSet(3, 1);
+//	print();
+//	printf("-<4, %d>-\n", lruCacheGet(4));
+//	print();
+//	lruCacheSet(4, 1);
+//	print();
+//	printf("-<4, %d>-\n", lruCacheGet(4));
+//	print();
+//	lruCacheSet(5, 1);
+//	print();
+//	printf("-<5, %d>-\n", lruCacheGet(5));
+//	print();
+//	lruCacheSet(2, 1);
+//	print();
+//	printf("-<2, %d>-\n", lruCacheGet(2));
+//	print();
+//	lruCacheFree();
+//	system("pause");
+//	return 0;
+//}

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "two sum", "two sum\two sum.vcxproj", "{A0AB2271-BB7A-499B-91F3-777797539915}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode", "two sum\two sum.vcxproj", "{A0AB2271-BB7A-499B-91F3-777797539915}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lintcode", "lintcode\lintcode.vcxproj", "{536271CC-B6E6-46F3-A876-296A4E5B3302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A0AB2271-BB7A-499B-91F3-777797539915}.Debug|x86.Build.0 = Debug|Win32
 		{A0AB2271-BB7A-499B-91F3-777797539915}.Release|x86.ActiveCfg = Release|Win32
 		{A0AB2271-BB7A-499B-91F3-777797539915}.Release|x86.Build.0 = Release|Win32
+		{536271CC-B6E6-46F3-A876-296A4E5B3302}.Debug|x86.ActiveCfg = Debug|Win32
+		{536271CC-B6E6-46F3-A876-296A4E5B3302}.Debug|x86.Build.0 = Debug|Win32
+		{536271CC-B6E6-46F3-A876-296A4E5B3302}.Release|x86.ActiveCfg = Release|Win32
+		{536271CC-B6E6-46F3-A876-296A4E5B3302}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

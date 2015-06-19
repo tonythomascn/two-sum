@@ -9,16 +9,17 @@ using std::unordered_map;
 
 vector<int> twoSum(vector<int>& nums, int target);
 int * twoSum(int* nums, int numsSize, int target);
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	vector<int> nums{ 0,2,4,6,8,10,12,14,16,18,20,22,24 };
-	vector<int> index = twoSum(nums, 6);
-	for each (int i in index)
-		printf(" %d", i);
-	system("pause");
-	return 0;
-}
+//
+//int main(int argc, _TCHAR* argv[])
+//{
+//	vector<int> nums{ 0,2,4,6,8,10,12,14,16,18,20,22,24 };
+//	vector<int> index = twoSum(nums, 6);
+//	for each (int i in index)
+//		printf(" %d", i);
+//	system("pause");
+//	return 0;
+//}
+/*
 vector<int> twoSum(vector<int>& nums, int target)
 {
 	vector<int> indexs(2);
@@ -33,6 +34,8 @@ vector<int> twoSum(vector<int>& nums, int target)
 	}
 	return indexs;
 }
+*/
+
 vector<int> twoSum(vector<int>& nums, int target)
 {
 	vector<int> indexs(2);

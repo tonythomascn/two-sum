@@ -88,6 +88,11 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\lrucache.c" />
+    <ClCompile Include="..\reverselinkedlist.c" />
+    <ClCompile Include="invertbinarytree.cpp" />
+    <ClCompile Include="lrucache.cpp" />
+    <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="two sum.cpp" />
   </ItemGroup>
