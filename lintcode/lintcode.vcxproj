@@ -92,6 +92,8 @@
     <ClCompile Include="binarytreepostordertraversal.cpp" />
     <ClCompile Include="binarytreepreordertraversal.cpp" />
     <ClCompile Include="climbingstairs.cpp" />
+    <ClCompile Include="coinsinaline.cpp" />
+    <ClCompile Include="coinsinaline2.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />
