@@ -89,6 +89,7 @@
     <ClCompile Include="addtwonumbers.cpp" />
     <ClCompile Include="binarysearch.cpp" />
     <ClCompile Include="binarytreeinordertraversal.cpp" />
+    <ClCompile Include="binarytreepostordertraversal.cpp" />
     <ClCompile Include="binarytreepreordertraversal.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />

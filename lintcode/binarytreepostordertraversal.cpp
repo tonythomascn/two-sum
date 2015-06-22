@@ -1,19 +1,21 @@
 /*
-Binary Tree Preorder Traversal
+Binary Tree Postorder Traversal
 
-41% Accepted
-Given a binary tree, return the preorder traversal of its nodes' values.
+38% Accepted
+Given a binary tree, return the postorder traversal of its nodes' values.
 
 Have you met this question in a real interview? Yes
 Example
-Given binary tree {1,#,2,3}:
+Given binary tree {1,#,2,3},
 
 1
 \
 2
 /
 3
-return [1,2,3].
+
+
+return [3,2,1].
 
 Challenge
 Can you do it without recursion?
@@ -42,38 +44,45 @@ public:
 class Solution {
 	/**
 	* @param root: The root of binary tree.
-	* @return: Preorder in vector which contains node values.
+	* @return: Postorder in vector which contains node values.
 	*/
 public:
-	vector<int> preorderTraversal(TreeNode *root) {
+	vector<int> postorderTraversal(TreeNode *root) {
 		vector<int> result;
 		if (NULL == root)
 			return result;
 		stack<TreeNode*> stk;
-		stk.push(root);
+		TreeNode* lastnode = NULL;
+		//TreeNode* peeknode = NULL;
 		while (1) {
-			if (!stk.empty()) {
-				root = stk.top();
-				stk.pop();
+			if (root) {
+				stk.push(root);
+				root = root->left;
 			}
-			else
-				break;
-			result.push_back(root->val);
-			if (root->right)
-				stk.push(root->right);
-			if (root->left)
-				stk.push(root->left);
+			else {
+				root = stk.top();
+				if (root->right != NULL && lastnode != root->right) {
+					root = root->right;
+				}
+				else{
+					lastnode = root;
+					stk.pop();
+					result.push_back(root->val);
+					root = NULL;
+					if (stk.empty()) break;
+				}
+			}
 		}
 		return result;
 	}
 };
 
 //int main() {
-//	TreeNode* root = new TreeNode(1);
-//	root->left = new TreeNode(2);
-//	root->right = new TreeNode(3);
+//	TreeNode* root = new TreeNode(1);	
+//	root->right = new TreeNode(2);
+//	root->right->left = new TreeNode(3);
 //	Solution s;
-//	vector<int> result = s.preorderTraversal(root);
+//	vector<int> result = s.postorderTraversal(root);
 //	for each(int i in result)
 //		std::cout << i << " ";
 //	std::cout << std::endl;
