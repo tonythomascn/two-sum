@@ -68,5 +68,14 @@
     <ClCompile Include="comparestrings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="convertsortedarray2BSTwithminiheight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="convertsortedlist2BST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="count1inbinary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
