@@ -65,5 +65,8 @@
     <ClCompile Include="coinsinaline2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="comparestrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
