@@ -83,5 +83,8 @@
     <ClCompile Include="deletenodeinthemiddleofsinglylinkedlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fizzbuzz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
