@@ -98,6 +98,7 @@
     <ClCompile Include="convertsortedarray2BSTwithminiheight.cpp" />
     <ClCompile Include="convertsortedlist2BST.cpp" />
     <ClCompile Include="count1inbinary.cpp" />
+    <ClCompile Include="countandsay.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />

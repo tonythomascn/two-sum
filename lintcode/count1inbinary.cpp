@@ -32,12 +32,12 @@ int countOnes(int num) {
 	return result;
 }
 
-int countOnes(int num) {
-	int result = 0;
-	for (; num > 0; num &= num - 1, result++) {
-	}
-	return result;
-}
+//int countOnes(int num) {
+//	int result = 0;
+//	for (; num > 0; num &= num - 1, result++) {
+//	}
+//	return result;
+//}
 
 //int main() {
 //	printf("%d\n", countOnes(32));

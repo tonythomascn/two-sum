@@ -77,5 +77,8 @@
     <ClCompile Include="count1inbinary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="countandsay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
