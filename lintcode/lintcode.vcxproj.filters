@@ -89,5 +89,11 @@
     <ClCompile Include="flipbits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gasstation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hashfunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

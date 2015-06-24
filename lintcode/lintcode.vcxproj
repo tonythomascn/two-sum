@@ -103,6 +103,8 @@
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="fizzbuzz.cpp" />
     <ClCompile Include="flipbits.cpp" />
+    <ClCompile Include="gasstation.cpp" />
+    <ClCompile Include="hashfunction.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="stdafx.cpp">
