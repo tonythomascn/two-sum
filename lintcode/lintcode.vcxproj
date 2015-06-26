@@ -109,6 +109,7 @@
     <ClCompile Include="insertionsortlist.cpp" />
     <ClCompile Include="insertnodeinaBST.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
+    <ClCompile Include="lengthoflastword.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
