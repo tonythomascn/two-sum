@@ -30,53 +30,20 @@ public:
 	* @return: The head of linked list.
 	*/
 	ListNode *insertionSortList(ListNode *head) {
-		// write your code here
-		if (NULL == head || NULL == head->next)
-			return head;
-
-		ListNode* curr = head;
-		ListNode* tmp;
-		while (curr->next) {
-			if (curr->val > curr->next->val) {
-				tmp = curr->next;
-				curr->next = curr->next->next;
-				tmp->next = NULL;
-				head = insertList(head, tmp);
-				curr = head;
-				continue;
+		ListNode* dummy = new ListNode(0);
+		ListNode* node, *tmp;
+		while (NULL != head) {
+			node = dummy;
+			while (NULL != node->next && node->next->val < head->val) {
+				node = node->next;
 			}
-			curr = curr->next;
+			tmp = head->next;
+			head->next = node->next;
+			node->next = head;
+			head = tmp;
 		}
-		return head;
-	}
-	ListNode*insertList(ListNode* head, ListNode*node) {
-		if (NULL == head) {
-			return node;
-		}
-		ListNode*curr = head;
-		while (curr) {
-			if (curr->val <= node->val){				
-				if (NULL != curr->next){
-					if (curr->next->val > node->val) {
-						node->next = curr->next;
-						curr->next = node;
-						break;
-					}
-				}
-				else {
-					curr->next = node;
-					break;
-				}
-			}else {
-				int tmp = curr->val;
-				curr->val = node->val;
-				node->val = tmp;
-				node->next = curr->next;
-				curr->next = node;
-				break;
-			}
-			curr = curr->next;
-		}
+		head = dummy->next;
+		delete dummy;
 		return head;
 	}
 };
