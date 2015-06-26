@@ -98,5 +98,8 @@
     <ClCompile Include="insertinterval.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="insertnodeinaBST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

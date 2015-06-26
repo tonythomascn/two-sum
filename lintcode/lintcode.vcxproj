@@ -106,6 +106,7 @@
     <ClCompile Include="gasstation.cpp" />
     <ClCompile Include="hashfunction.cpp" />
     <ClCompile Include="insertinterval.cpp" />
+    <ClCompile Include="insertnodeinaBST.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="stdafx.cpp">
