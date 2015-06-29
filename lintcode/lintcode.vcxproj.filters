@@ -128,5 +128,8 @@
     <ClCompile Include="maxdepthofbinarytree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="minidepthofbinarytree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
