@@ -24,7 +24,7 @@ Tags Expand
 * Definition of TreeNode:
 */ 
 #include "stdafx.h"
-
+#include <algorithm>
 class TreeNode {
  public:
      int val;
@@ -42,16 +42,7 @@ public:
 	* @return: An integer
 	*/
 	int maxDepth(TreeNode *root) {
-		if (NULL == root)
-			return 0;
-
-		int left = 0;
-		int right = 0;
-		if (root->left)
-			left += maxDepth(root->left);
-		if (root->right)
-			right += maxDepth(root->right);
-
-		return (left > right ? left : right) + 1;
+		if (!root) return 0;
+		return std::max(maxDepth(root->left), maxDepth(root->right)) + 1;
 	}
 };
