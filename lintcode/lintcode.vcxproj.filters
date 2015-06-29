@@ -113,5 +113,8 @@
     <ClCompile Include="longestincreasingsubsequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="longestwords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
