@@ -122,5 +122,8 @@
     <ClCompile Include="majornumber2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="majornumber3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
