@@ -24,7 +24,8 @@ Tags Expand
 * Definition of TreeNode:
 */ 
 #include "stdafx.h"
-#include <algorithm>
+#include <stack>
+using std::stack;
 class TreeNode {
  public:
      int val;
@@ -43,6 +44,29 @@ public:
 	*/
 	int maxDepth(TreeNode *root) {
 		if (!root) return 0;
-		return std::max(maxDepth(root->left), maxDepth(root->right)) + 1;
+		stack<TreeNode*> visit;
+		stack<int> depth;
+		visit.push(root);
+		depth.push(1);
+		int maxdepth = 1;
+		TreeNode* curr;
+		int currdepth;
+		while (!visit.empty()) {
+			curr = visit.top();
+			visit.pop();
+			currdepth = depth.top();
+			depth.pop();
+			if (currdepth > maxdepth)
+				maxdepth = currdepth;
+			if (curr->left) {
+				visit.push(curr->left);
+				depth.push(currdepth + 1);
+			}
+			if (curr->right) {
+				visit.push(curr->right);
+				depth.push(currdepth + 1);
+			}
+		}
+		return maxdepth;
 	}
 };
