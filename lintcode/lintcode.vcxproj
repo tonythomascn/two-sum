@@ -113,6 +113,8 @@
     <ClCompile Include="longestincreasingcontinuoussubsequence.cpp" />
     <ClCompile Include="longestincreasingsubsequence.cpp" />
     <ClCompile Include="longestwords.cpp" />
+    <ClCompile Include="majority number.cpp" />
+    <ClCompile Include="majornumber2.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

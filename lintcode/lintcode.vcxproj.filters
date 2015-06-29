@@ -116,5 +116,11 @@
     <ClCompile Include="longestwords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="majority number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="majornumber2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
