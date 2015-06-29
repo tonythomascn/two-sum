@@ -125,5 +125,8 @@
     <ClCompile Include="majornumber3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="maxdepthofbinarytree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
