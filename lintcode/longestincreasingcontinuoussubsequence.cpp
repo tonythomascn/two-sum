@@ -15,40 +15,41 @@ O(n) time and O(1) extra space.
 */
 #include "stdafx.h"
 #include <vector>
+#include <algorithm>
 using std::vector;
 /**
 * @param A an array of Integer
 * @return  an integer
 */
 int longestIncreasingContinuousSubsequence(vector<int>& A) {
-	if (2 > A.size())
+	if (2 > A.size()) {
 		return A.size();
-	else if (2 == A.size()) {
-		if (A[0] != A[1])
-			return A.size();
-		else
-			return 1;
 	}
-
-	int longest = 0;
+	//assume the array is increasing
+	bool fromLeft = true;
 	int curr = 1;
+	int res = 0;
 	for (int i = 1; i < A.size(); i++) {
-		curr++;
-		if (i + 1 < A.size()) {
-			if (!(A[i - 1] > A[i] && A[i] > A[i + 1]) &&
-				!(A[i - 1] < A[i] && A[i] < A[i + 1])) {
-				longest = longest < curr ? curr : longest;
-				curr = 1;
+		if (A[i] > A[i - 1]) {
+			if (!fromLeft) {
+				res = res < curr ? curr : res;
+				curr = 2;	
 			}
+			else {
+				curr++;
+			}
+			fromLeft = true;
 		}
-		else {
-			if (!(A[i - 2] > A[i - 1] && A[i - 1] > A[i]) &&
-				!(A[i - 2] < A[i - 1] && A[i - 1] < A[i])) {
-				longest = longest < curr ? curr : longest;
-				curr = 1;
+		else if (A[i] < A[i - 1]) {
+			if (fromLeft) {
+				res = res < curr ? curr : res;
+				curr = 2;	
 			}
+			else
+				curr++;
+			fromLeft = false;
 		}
 	}
-	longest = longest < curr ? curr : longest;
-	return longest;
+	res = res < curr ? curr : res;
+	return res;
 }
