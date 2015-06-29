@@ -26,8 +26,9 @@ The minimum depth is 2
 * Definition of TreeNode:
 */
 #include "stdafx.h"
-#include <climits>
+#include <queue>
 #include <algorithm>
+using std::queue;
 class TreeNode {
 public:
 	int val;
@@ -46,18 +47,18 @@ public:
 	int minDepth(TreeNode *root) {
 		if (NULL == root)
 			return 0;
-		int left = 0;
-		if (root->left)
-			left = minDepth(root->left);
-
-		int right = 0;
-		if (root->right)
-			right = minDepth(root->right);
-
-		if (0 == left)
-			left = INT_MAX;
-		if (0 == right)
-			right = INT_MAX;
-		return std::min(left, right) + 1;
+		queue <std::pair< TreeNode*, int >> q;
+		q.push(std::make_pair(root, 1));
+		std::pair<TreeNode*, int> curr;
+		while (!q.empty()) {
+			curr = q.front();
+			q.pop();
+			if (!curr.first->left && !curr.first->right)
+				return curr.second;
+			if (curr.first->left)
+				q.push(std::make_pair(curr.first->left, curr.second + 1));
+			if (curr.first->right)
+				q.push(std::make_pair(curr.first->right, curr.second + 1));
+		}
 	}
 };
