@@ -42,11 +42,14 @@ class TreeNode {
 };
 
 class Solution {
+public:
 	/**
 	* @param root: The root of binary tree.
 	* @return: Inorder in vector which contains node values.
+	* inorder traversal without recursion
+	* Time complexitiy O(n)
+	* Space complexity O(n)
 	*/
-public:
 	vector<int> inorderTraversal(TreeNode *root) {
 		vector<int> result;
 		if (NULL == root)
@@ -66,6 +69,64 @@ public:
 				}
 				else
 					break;
+			}
+		}
+		return result;
+	}
+	/**
+	* @param root: The root of binary tree.
+	* @return: Inorder in vector which contains node values.
+	* inorder traversal recursively.
+	* Time complexity O(n)
+	* Space complexity O(n)
+	*/
+	vector<int> inorderTraversalRecursive(TreeNode *root) {
+		vector<int> result;
+		if (NULL == root)
+			return result;
+		vector<int> left = inorderTraversalRecursive(root->left);
+		vector<int> right = inorderTraversalRecursive(root->right);
+		result.insert(result.end(), left.begin(), left.end());
+		result.push_back(root->val);
+		result.insert(result.end(), right.begin(), right.end());
+		return result;
+	}
+	/**
+	* @param root: The root of binary tree.
+	* @return: Inorder in vector which contains node values.
+	* inorder traversal using Morris Traversal:
+	* Morris Traversal uses the tree as a threaded binary tree, 
+	* using the predecessor and successor to navigate.
+	* Time complexity O(n)
+	* Space complexity O(1)
+	*/
+	vector<int> inorderTraversalMorris(TreeNode* root) {
+		vector<int> result;
+		if (NULL == root)
+			return result;
+		TreeNode *curr = root;
+		TreeNode *prev = NULL;
+		while (curr) {
+			if (NULL == curr->left) {
+				result.push_back(curr->val);
+				curr = curr->right;
+			}
+			else {
+				//find predecessor
+				while (prev->right && prev->right != curr)
+					prev = prev->right;
+				if (NULL == prev) {
+					/* Make current as right child of its inorder predecessor */
+					prev->right = curr;
+					curr = curr->left;
+				}
+				else {
+					/* Revert the changes made in if part to restore the original
+					tree i.e., fix the right child of predecssor */
+					prev->right = NULL;
+					result.push_back(curr->val);
+					curr = curr->right;
+				}
 			}
 		}
 		return result;
