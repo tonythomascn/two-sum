@@ -134,5 +134,8 @@
     <ClCompile Include="matrixzigzagtraversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="houserobber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

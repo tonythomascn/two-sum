@@ -105,6 +105,7 @@
     <ClCompile Include="flipbits.cpp" />
     <ClCompile Include="gasstation.cpp" />
     <ClCompile Include="hashfunction.cpp" />
+    <ClCompile Include="houserobber.cpp" />
     <ClCompile Include="insertinterval.cpp" />
     <ClCompile Include="insertionsortlist.cpp" />
     <ClCompile Include="insertnodeinaBST.cpp" />
