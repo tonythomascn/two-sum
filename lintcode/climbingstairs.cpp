@@ -18,19 +18,30 @@ return 3
 Tags Expand
 */
 #include "stdafx.h"
-	/**
-	* @param n: An integer
-	* @return: An integer
-	*/
-	int climbStairs(int n) {
-		if (1 >= n)
-			return n;
-		int last = 1, lastprev = 1;
-		int now = 0;
-		for (int i = 2; i <= n; i++) {
-			now = last + lastprev;
-			lastprev = last;
-			last = now;
-		}
-		return now;
+#include <vector>
+using std::vector;
+/**
+* @param n: An integer
+* @return: An integer
+*/
+int climbStairs(int n) {
+	if (1 >= n)
+		return n;
+	int last = 1, lastprev = 1;
+	int now = 0;
+	for (int i = 2; i <= n; i++) {
+		now = last + lastprev;
+		lastprev = last;
+		last = now;
 	}
+	return now;
+}
+int climbStairs2(int n) {
+	vector<int> res(3);
+	res[0] = 1;
+	res[1] = 1;
+	for (int i = 2; i <= n; i++) {
+		res[i % 3] = res[(i - 1) % 3] + res[(i - 2) % 3];
+	}
+	return res[n % 3];
+}
