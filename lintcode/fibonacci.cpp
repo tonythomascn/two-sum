@@ -27,6 +27,8 @@ The Nth fibonacci number won't exceed the max value of signed 32-bit integer in 
 */
 
 #include "stdafx.h"
+#include <vector>
+using std::vector;
 int fibonacci(int n) {
 	if (1 >= n)
 		return 0;
@@ -40,6 +42,16 @@ int fibonacci(int n) {
 		last = now;
 	}
 	return now;
+}
+int fibonacci2(int n) {
+	vector<int> res(3);
+	res[0] = 0;
+	res[1] = 1;
+	for (int i = 2; i <= n; i++) {
+		res[i % 3] = res[(i - 1) % 3] + res[(i - 2) % 3];
+	}
+	//the index of vector is smaller than nth 
+	return res[(n - 1) % 3];
 }
 //int main() {
 //	fibonacci(10);
