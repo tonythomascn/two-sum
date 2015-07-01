@@ -116,6 +116,7 @@
     <ClCompile Include="majority number.cpp" />
     <ClCompile Include="majornumber2.cpp" />
     <ClCompile Include="majornumber3.cpp" />
+    <ClCompile Include="matrixzigzagtraversal.cpp" />
     <ClCompile Include="maxdepthofbinarytree.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="Single Number.cpp" />

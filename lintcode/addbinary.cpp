@@ -1,3 +1,17 @@
+/*
+Add Binary
+
+24% Accepted
+Given two binary strings, return their sum (also a binary string).
+
+Have you met this question in a real interview? Yes
+Example
+a = 11
+
+b = 1
+
+Return 100
+*/
 #include "stdafx.h"
 #include <string>
 #include <iostream>
