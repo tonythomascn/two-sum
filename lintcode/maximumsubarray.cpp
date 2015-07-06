@@ -16,6 +16,7 @@ Can you do it in time complexity O(n)?
 */
 #include "stdafx.h"
 #include <vector>
+#include <algorithm>
 using std::vector;
 /**
 * @param nums: A list of integers
@@ -33,4 +34,40 @@ int maxSubArray(vector<int> nums) {
 		}
 	}
 	return max;
+}
+//O(nlogn)
+int findMaxSub(vector<int> nums, int start, int end) {
+	if (start == end)
+		return nums[start];
+	int mid = start + (end - start) / 2;
+	//logn
+	int leftMax = findMaxSub(nums, start, mid);
+	int rightMax = findMaxSub(nums, mid + 1, end);
+	int sum = 0;
+	int midleftMax = nums[mid];
+	//n
+	for (int i = mid; i >= start; i--) {
+		sum += nums[i];
+		if (sum > midleftMax)
+			midleftMax = sum;
+	}
+	int midrightMax = nums[mid + 1];
+	sum = 0;
+	for (int i = mid + 1; i <= end; i++) {
+		sum += nums[i];
+		if (sum > midrightMax)
+			midrightMax = sum;
+	}
+	return std::max(std::max(leftMax, rightMax), midleftMax + midrightMax);
+}
+int maxSubArray2(vector<int> nums) {
+	if (0 >= nums.size())
+		return 0;
+	//divde and conquer
+	return findMaxSub(nums, 0, nums.size() - 1);
+}
+
+int main() {
+	vector<int> v{ -1,-2,-3,-100,-1,-50 };
+	int i = maxSubArray2(v);
 }

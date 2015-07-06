@@ -64,7 +64,7 @@ int majorityNumber2(vector<int> nums) {
 	}
 	return count1 > count2? major1 : major2;
 }
-int main() {
-	vector<int> v{ 1,1,1,1,2,2,3,3,4,4,4 };
-	majorityNumber2(v);
-}
+//int main() {
+//	vector<int> v{ 1,1,1,1,2,2,3,3,4,4,4 };
+//	majorityNumber2(v);
+//}
