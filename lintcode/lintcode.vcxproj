@@ -122,6 +122,7 @@
     <ClCompile Include="maxdepthofbinarytree.cpp" />
     <ClCompile Include="maximumsubarray.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
+    <ClCompile Include="minimumsubarray.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

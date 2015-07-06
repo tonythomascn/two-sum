@@ -143,5 +143,8 @@
     <ClCompile Include="continuoussubarraysum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="minimumsubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
