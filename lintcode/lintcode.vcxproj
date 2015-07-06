@@ -120,6 +120,7 @@
     <ClCompile Include="majornumber3.cpp" />
     <ClCompile Include="matrixzigzagtraversal.cpp" />
     <ClCompile Include="maxdepthofbinarytree.cpp" />
+    <ClCompile Include="Maximumproductsubarray.cpp" />
     <ClCompile Include="maximumsubarray.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="minimumsubarray.cpp" />
