@@ -17,41 +17,32 @@ using std::vector;
 *          the first number and the index of the last number
 */
 vector<int> continuousSubarraySum(vector<int>& A) {
-	vector<int> res;
-	if (0 == A.size())
-		return res;
-	if (1 == A.size()) {
-		res.push_back(0);
-		res.push_back(0);
-		return res;
-	}
-	int sum = 0;
-	int start = 0;
-	int end = 0;
-	int max = INT_MIN;
-	for (int i = 0; i < A.size(); i++) {
-		sum += A[i];
-		if (sum > max) {
-			max = sum;
-			end = i;
-		}
-		if (0 > sum) {
-			sum = 0;
-		}
-	}
-	sum = 0;
-	for (int i = end; i >= start; i--) {
-		sum += A[i];
-		if (sum == max) {
+	int len = A.size();
+	vector<int> res(2, 0);
+	if (0 == len) return res;
+	int start = 0, end = 0, lastMax = A[0];
+	int maxV = lastMax;
+	for (int i = 1;i<len;i++)
+	{
+		if (lastMax < 0)
+		{
 			start = i;
-			break;
+			lastMax = A[i];
+		}
+		else 
+			lastMax = lastMax + A[i];
+		end = i;
+		if (lastMax > maxV)
+		{
+			//always store the maximum subarray index
+			maxV = lastMax;
+			res[0] = start;
+			res[1] = end;
 		}
 	}
-	res.push_back(start);
-	res.push_back(end);
 	return res;
 }
-int main() {
-	vector<int> v{ -4,5,-4,5,-4,5,-4,5,-4,5,-4,5,-4,5,-4,5,-4,5,-1000 };
-	vector<int> i = continuousSubarraySum(v);
-}
+//int main() {
+//	vector<int> v{ -1,-2, -3 };
+//	vector<int> i = continuousSubarraySum(v);
+//}
