@@ -67,7 +67,7 @@ int maxSubArray2(vector<int> nums) {
 	return findMaxSub(nums, 0, nums.size() - 1);
 }
 
-int main() {
-	vector<int> v{ -1,-2,-3,-100,-1,-50 };
-	int i = maxSubArray2(v);
-}
+//int main() {
+//	vector<int> v{ -1,-2,-3,-100,-1,-50 };
+//	int i = maxSubArray2(v);
+//}

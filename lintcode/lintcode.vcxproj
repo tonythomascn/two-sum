@@ -95,6 +95,7 @@
     <ClCompile Include="coinsinaline.cpp" />
     <ClCompile Include="coinsinaline2.cpp" />
     <ClCompile Include="comparestrings.cpp" />
+    <ClCompile Include="continuoussubarraysum.cpp" />
     <ClCompile Include="convertsortedarray2BSTwithminiheight.cpp" />
     <ClCompile Include="convertsortedlist2BST.cpp" />
     <ClCompile Include="count1inbinary.cpp" />
