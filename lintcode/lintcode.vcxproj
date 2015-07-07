@@ -125,6 +125,7 @@
     <ClCompile Include="median.cpp" />
     <ClCompile Include="mergeintervals.cpp" />
     <ClCompile Include="mergesortedarray.cpp" />
+    <ClCompile Include="mergesortedarray2.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="minimumsubarray.cpp" />
     <ClCompile Include="Single Number.cpp" />
