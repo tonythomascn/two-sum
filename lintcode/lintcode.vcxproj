@@ -123,6 +123,7 @@
     <ClCompile Include="Maximumproductsubarray.cpp" />
     <ClCompile Include="maximumsubarray.cpp" />
     <ClCompile Include="median.cpp" />
+    <ClCompile Include="mergeintervals.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="minimumsubarray.cpp" />
     <ClCompile Include="Single Number.cpp" />

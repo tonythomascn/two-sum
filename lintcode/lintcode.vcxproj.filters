@@ -152,5 +152,8 @@
     <ClCompile Include="median.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mergeintervals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

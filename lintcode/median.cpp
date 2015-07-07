@@ -46,7 +46,7 @@ int median(vector<int> &nums) {
 	return findMedian(nums, 0, n - 1, n / 2 + (n & 1));
 }
 
-int main() {
-	vector<int> v{ 4 };
-	int i = median(v);
-}
+//int main() {
+//	vector<int> v{ 4 };
+//	int i = median(v);
+//}
