@@ -161,5 +161,8 @@
     <ClCompile Include="mergesortedarray2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="spacereplacement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
