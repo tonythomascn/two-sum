@@ -41,14 +41,21 @@ public:
 		printf("null\n");
 	}
 };
-int main() {
-	Solution s;
-
-	struct ListNode* list = new ListNode(0);
-	s.push(list, 1);
-	s.push(list, 2);
-	s.print(s.reverseList(list));
-
-	system("pause");
-	return 0;
-}
+//int main() {
+//	Solution s;
+//
+//	struct ListNode* list = new ListNode(0);
+//	s.push(list, 1);
+//	s.push(list, 2);
+//	s.print(s.reverseList(list));
+//
+//	struct ListNode* tmp;
+//	while (list) {
+//		tmp = list;
+//		list = list->next;
+//		free(tmp);
+//	}
+//
+//	system("pause");
+//	return 0;
+//}

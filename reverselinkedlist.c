@@ -39,17 +39,24 @@ void print(struct ListNode* head) {
 	}
 	printf("null\n");
 }
-int main() {
-	struct ListNode* list = (struct ListNode*)malloc(sizeof(struct ListNode));
-	list->next = NULL;
-	list->val = 0;
- 	push(list, 1);
-	push(list, 2);
-	push(list, 3);
-	push(list, 4);
-	print(list);
-	print(reverseList(list));
 
-	system("pause");
-	return 0;
-}
+//int main() {
+//	struct ListNode* list = (struct ListNode*)malloc(sizeof(struct ListNode));
+//	list->next = NULL;
+//	list->val = 0;
+// 	push(list, 1);
+//	push(list, 2);
+//	push(list, 3);
+//	push(list, 4);
+//	print(list);
+//	print(reverseList(list));
+//
+//	struct ListNode* tmp;
+//	while (list) {
+//		tmp = list;
+//		list = list->next;
+//		free(tmp);
+//	}
+//	system("pause");
+//	return 0;
+//}
