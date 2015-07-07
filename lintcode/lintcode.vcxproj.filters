@@ -164,5 +164,8 @@
     <ClCompile Include="spacereplacement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mergetwosortedlists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
