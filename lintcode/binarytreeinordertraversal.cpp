@@ -41,7 +41,7 @@ class TreeNode {
      }
 };
 
-class Solution {
+class Solution1 {
 public:
 	/**
 	* @param root: The root of binary tree.
@@ -73,6 +73,9 @@ public:
 		}
 		return result;
 	}
+};
+class Solution2 {
+public:
 	/**
 	* @param root: The root of binary tree.
 	* @return: Inorder in vector which contains node values.
@@ -80,17 +83,20 @@ public:
 	* Time complexity O(n)
 	* Space complexity O(n)
 	*/
-	vector<int> inorderTraversalRecursive(TreeNode *root) {
+	vector<int> inorderTraversal(TreeNode *root) {
 		vector<int> result;
 		if (NULL == root)
 			return result;
-		vector<int> left = inorderTraversalRecursive(root->left);
-		vector<int> right = inorderTraversalRecursive(root->right);
+		vector<int> left = inorderTraversal(root->left);
+		vector<int> right = inorderTraversal(root->right);
 		result.insert(result.end(), left.begin(), left.end());
 		result.push_back(root->val);
 		result.insert(result.end(), right.begin(), right.end());
 		return result;
 	}
+};
+class Solution3 {
+public:
 	/**
 	* @param root: The root of binary tree.
 	* @return: Inorder in vector which contains node values.
@@ -100,7 +106,7 @@ public:
 	* Time complexity O(n)
 	* Space complexity O(1)
 	*/
-	vector<int> inorderTraversalMorris(TreeNode* root) {
+	vector<int> inorderTraversal(TreeNode* root) {
 		vector<int> result;
 		if (NULL == root)
 			return result;
@@ -113,9 +119,10 @@ public:
 			}
 			else {
 				//find predecessor
-				while (prev->right && prev->right != curr)
+				prev = curr->left;
+				while (prev->right != NULL && prev->right != curr)
 					prev = prev->right;
-				if (NULL == prev) {
+				if (NULL == prev->right) {
 					/* Make current as right child of its inorder predecessor */
 					prev->right = curr;
 					curr = curr->left;
@@ -134,11 +141,11 @@ public:
 };
 
 //int main() {
-//	TreeNode* root = new TreeNode(1);
-//	root->left = new TreeNode(2);
-//	root->right = new TreeNode(3);
-//	Solution s;
-//	vector<int> result = s.inorderTraversal(root);
+//	TreeNode root(1);
+//	root.left = &TreeNode(2);
+//	root.right = &TreeNode(3);
+//	Solution3 s;
+//	vector<int> result = s.inorderTraversal(&root);
 //	for each(int i in result)
 //		std::cout << i << " ";
 //	std::cout << std::endl;
