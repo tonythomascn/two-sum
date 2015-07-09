@@ -19,8 +19,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -130,6 +130,7 @@
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="minimumsubarray.cpp" />
     <ClCompile Include="nthtolastnodeinlist.cpp" />
+    <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="spacereplacement.cpp" />

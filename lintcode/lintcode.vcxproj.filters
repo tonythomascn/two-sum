@@ -173,5 +173,8 @@
     <ClCompile Include="nthtolastnodeinlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="removeduplicatesfromsortedlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

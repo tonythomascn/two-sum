@@ -108,8 +108,6 @@ public:
 	*/
 	vector<int> inorderTraversal(TreeNode* root) {
 		vector<int> result;
-		if (NULL == root)
-			return result;
 		TreeNode *curr = root;
 		TreeNode *prev = NULL;
 		while (curr) {

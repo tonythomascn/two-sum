@@ -7,6 +7,8 @@ set(key, value) - Set or insert the value if the key is not already present. Whe
 pure c in doubly linked list
 */
 #include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
 #define HASH 10000
 struct Node{
 int key;
@@ -124,14 +126,14 @@ void lruCacheSet(int key, int value) {
 	array[key] = cachelist->last;
 }
 
-//void print() {
-//	struct Node * tmp = cachelist->first;
-//	while (tmp) {
-//		printf("<%d, %d> ", tmp->key, tmp->value);
-//		tmp = tmp->next;
-//	}
-//	printf("\n");
-//}
+void print() {
+	struct Node * tmp = cachelist->first;
+	while (tmp) {
+		printf("<%d, %d> ", tmp->key, tmp->value);
+		tmp = tmp->next;
+	}
+	printf("\n");
+}
 //int main() {
 //	lruCacheInit(4);
 //	printf("-<2, %d>-\n", lruCacheGet(2));

@@ -24,15 +24,15 @@ There may exist multiple valid solutions, return any of them.
 #include <stack>
 using std::vector;
 using std::stack;
- class TreeNode {
- public:
-     int val;
-     TreeNode *left, *right;
-     TreeNode(int val) {
-         this->val = val;
-         this->left = this->right = NULL;
-     }
- };
+class TreeNode {
+public:
+	int val;
+	TreeNode *left, *right;
+	TreeNode(int val) {
+		this->val = val;
+		this->left = this->right = NULL;
+	}
+};
 
 class Solution {
 public:
@@ -45,8 +45,8 @@ public:
 			return NULL;
 		int root_val = A.size() / 2;
 		TreeNode * root = new TreeNode(A[root_val]);
-		vector<int> left(A.begin(), 
-			0 != A.size() % 2 ? A.end() - root_val - 1: A.end() - root_val);
+		vector<int> left(A.begin(),
+			0 != A.size() % 2 ? A.end() - root_val - 1 : A.end() - root_val);
 		vector<int> right(A.begin() + root_val + 1, A.end());
 		root->left = sortedArrayToBST(left);
 		root->right = sortedArrayToBST(right);
@@ -76,13 +76,60 @@ public:
 		}
 		return result;
 	}
+
+	void destroy(TreeNode* root) {
+		TreeNode*prev = NULL;
+		TreeNode*curr = root;
+		TreeNode*del;
+		stack<TreeNode*> q;
+		while (curr) {
+			if (NULL == curr->left) {
+				del = curr;
+				curr = curr->right;
+				q.push(del);
+				//delete del;
+			}
+			else {
+				prev = curr->left;
+				while (prev->left && prev->right != curr)
+					prev = prev->right;
+				if (NULL == prev->right) {
+					prev->right = curr;
+					curr = curr->left;
+				}
+				else {
+					prev->right = NULL;
+					del = curr;
+					curr = curr->right;
+					q.push(del);
+					//delete del;
+				}
+			}//end of else
+		}//end of while
+		while (q.empty()){
+			delete(q.top());
+			q.pop();
+		}
+	}
+	void destroy_r(TreeNode* root){
+		if (NULL == root)
+			return;
+		if (root->left)
+			destroy_r(root->left);
+		if (root->right)
+			destroy_r(root->right);
+		delete root;
+	}
 };
 
 //int main() {
 //	vector<int> v{ -1, 1 };
-//	vector<int> v2{ 1,2,3,4,5,6,7 };
+//	vector<int> v2{ 1, 2, 3, 4, 5, 6, 7 };
 //	Solution s;
-//	vector<int> r = s.inorderTraversal(s.sortedArrayToBST(v));
+//	TreeNode*root = s.sortedArrayToBST(v);
+//	vector<int> r = s.inorderTraversal(root);
 //	r = s.inorderTraversal(s.sortedArrayToBST(v2));
-//
+//	//s.destroy(root);
+//	s.destroy_r(root);
+//	return 0;
 //}

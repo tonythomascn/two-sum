@@ -57,18 +57,18 @@ private:
 	list<std::pair<int, int>> LRUList;
 	unordered_map<int, list<std::pair<int, int>>::iterator> LRUMap;
 };
-int main() {
-	LRUCache c(2);
-	c.set(2, 1);
-	c.print();
-	c.set(2, 2);
-	c.print();
-	std::cout << c.get(2) << std::endl;
-	c.set(1, 1);
-	c.print();
-	c.set(4, 1);
-	c.print();
-	std::cout << c.get(2) << std::endl;
-	system("pause");
-	return 0;
-}
+//int main() {
+//	LRUCache c(2);
+//	c.set(2, 1);
+//	c.print();
+//	c.set(2, 2);
+//	c.print();
+//	std::cout << c.get(2) << std::endl;
+//	c.set(1, 1);
+//	c.print();
+//	c.set(4, 1);
+//	c.print();
+//	std::cout << c.get(2) << std::endl;
+//	system("pause");
+//	return 0;
+//}
