@@ -54,7 +54,7 @@ public:
 				newInterval.start = std::min(newInterval.start, it->start);
 				newInterval.end = std::max(newInterval.end, it->end);
 				it = intervals.erase(it);
-			}					
+			}
 		}
 		intervals.insert(intervals.end(), newInterval);
 		return intervals;

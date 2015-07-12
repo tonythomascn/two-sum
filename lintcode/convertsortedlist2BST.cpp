@@ -89,15 +89,23 @@ public:
 		}
 		return result;
 	}
+	void destroy_tree(TreeNode* p_tree) {
+		if (p_tree != NULL) {
+			destroy_tree(p_tree->left);
+			destroy_tree(p_tree->right);
+			delete p_tree;
+		}
+	}
 }; 
 
 //int main() {
-//	ListNode*head = new ListNode(1);
-//	head->next = new ListNode(2);
-//	head->next->next = new ListNode(3);
-//	head->next->next->next = new ListNode(4);
-//	head->next->next->next->next = new ListNode(5);
+//	ListNode head(1);
+//	head.next = &ListNode(2);
+//	head.next->next = &ListNode(3);
+//	head.next->next->next = &ListNode(4);
+//	head.next->next->next->next = &ListNode(5);
 //	Solution s;
-//	vector<int> r = s.inorderTraversal(s.sortedListToBST(head));
-//
+//	TreeNode* root = s.sortedListToBST(&head);
+//	vector<int> r = s.inorderTraversal(root);
+//	s.destroy_tree(root);
 //}

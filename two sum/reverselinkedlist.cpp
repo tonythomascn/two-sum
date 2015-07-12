@@ -49,6 +49,13 @@ int main() {
 	s.push(list, 2);
 	s.print(s.reverseList(list));
 
+	struct ListNode* tmp;
+	while (list) {
+		tmp = list;
+		list = list->next;
+		free(tmp);
+	}
+
 	system("pause");
 	return 0;
 }

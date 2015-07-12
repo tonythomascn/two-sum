@@ -92,6 +92,14 @@ public:
 		printf("null\n");
 	}
 
+	void destory(struct ListNode* l) {
+		ListNode* tmp;
+		while (l) {
+			tmp = l;
+			l = l->next;
+			delete tmp;
+		}
+	}
 };
 
 //int main() {
@@ -166,5 +174,14 @@ public:
 //	cur = cur->next;
 //	cur->next = new ListNode(2);
 //	s.print(s.addLists(l5, l6));
+//
+//	s.destory(l1);
+//	s.destory(l2);
+//	s.destory(l3);
+//	s.destory(l4);
+//	s.destory(l5);
+//	s.destory(l6);
+//
 //	system("pause");
+//	return 0;
 //}
