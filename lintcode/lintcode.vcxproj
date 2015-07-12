@@ -129,6 +129,7 @@
     <ClCompile Include="mergetwosortedlists.cpp" />
     <ClCompile Include="minidepthofbinarytree.cpp" />
     <ClCompile Include="minimumsubarray.cpp" />
+    <ClCompile Include="minmumpathsum.cpp" />
     <ClCompile Include="nthtolastnodeinlist.cpp" />
     <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
