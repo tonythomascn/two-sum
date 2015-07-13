@@ -19,17 +19,17 @@ using std::string;
  * @return true or false
  */
 bool anagram(string s, string t) {
-  if (s.length() != t.length())
-  return false;
-  int stat[256] = {0};
+	if (s.length() != t.length())
+		return false;
+	int stat[256] = { 0 };
 
-    for (int i = 0; i < s.length(); i++){
-      stat[s[i]]++;
-      stat[t[i]]--;
-    }
-    for (int i = 0; i < 256; i++){
-      if (stat[i])
-      return false;
-    }
-    return true;
+	for (int i = 0; i < s.length(); i++){
+		stat[s[i]]++;
+		stat[t[i]]--;
+	}
+	for (int i = 0; i < 256; i++){
+		if (stat[i])
+			return false;
+	}
+	return true;
 }

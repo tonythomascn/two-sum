@@ -47,5 +47,8 @@
     <ClCompile Include="invertbinarytree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="edit distance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

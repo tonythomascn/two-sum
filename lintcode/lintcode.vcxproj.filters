@@ -179,5 +179,11 @@
     <ClCompile Include="minmumpathsum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="two_strings_are_anagrams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strstr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
