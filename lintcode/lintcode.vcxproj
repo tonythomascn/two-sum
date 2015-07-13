@@ -131,6 +131,7 @@
     <ClCompile Include="minimumsubarray.cpp" />
     <ClCompile Include="minmumpathsum.cpp" />
     <ClCompile Include="nthtolastnodeinlist.cpp" />
+    <ClCompile Include="O(1)_check_power_of_2.cpp" />
     <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />

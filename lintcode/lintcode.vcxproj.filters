@@ -185,5 +185,8 @@
     <ClCompile Include="strstr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="O(1)_check_power_of_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

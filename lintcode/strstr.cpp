@@ -22,6 +22,7 @@ Do I need to implement KMP Algorithm in a real interview?
 
 Not necessary. When you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.
 */
+#include "stdafx.h"
 #include <string>
 /**
  * Returns a index to the first occurrence of target in source,

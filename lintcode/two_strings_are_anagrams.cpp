@@ -11,6 +11,7 @@ Given s="abcd", t="dcab", return true.
 Challenge
 O(n) time, O(1) extra space
 */
+#include "stdafx.h"
 #include <string>
 using std::string;
 /**
