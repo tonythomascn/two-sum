@@ -191,5 +191,8 @@
     <ClCompile Include="palindrome_partition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="partition_array_by_odd_and_even.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
