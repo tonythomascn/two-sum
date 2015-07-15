@@ -18,33 +18,43 @@ Do it in-place and without extra memory.
 
 #include "stdafx.h"
 #include <vector>
+#include <algorithm>
 using std::vector;
 /**
 * @param A: An integer array.
 * @return: void
 */
 void rerange(vector<int> &A) {
-	int end;
-	int tmp;
-	for (int start = 0; start < A.size() - 1; ) {
-		while (start < A.size()) {
-			if (A[start] * A[start + 1] > 0) {
-				start++;
-				break;
-			}
-			start++;
-		}
-		for (end = start + 1; end < A.size(), A[start] * A[end] > 0; end++)
-			;
-		if (start < A.size() && end < A.size()) {
-			tmp = A[start];
-			A[start] = A[end];
-			A[end] = tmp;
-			start++;
-		}
+	int positive = 0;
+	for (auto i : A) {
+		positive += i > 0 ? 1 : 0;
+	}
+	bool expectpositive = true;
+	//if number of positive is less or equal to negative
+	if (positive * 2 <= A.size())
+		expectpositive = false;//let the negative start in the new array
+
+	int pos = 0;
+	int neg = 0;
+	int i = 0;
+	while (pos < A.size() && neg < A.size()) {
+		while (pos < A.size() && A[pos] > 0)
+			pos++;
+		while (neg < A.size() && A[neg] < 0)
+			neg++;
+
+		if (expectpositive && 0 > A[i])
+			std::swap(A[i], A[neg]);
+		if (!expectpositive && 0 < A[i])
+			std::swap(A[i], A[pos]);
+
+		if (i == pos) pos++;
+		if (i == neg) neg++;
+		expectpositive = !expectpositive;
+		i++;
 	}
 }
-int main() {
-	vector<int> v{ -13,-8,-12,-15,-14,35,7,-1,11,27,10,-7,-12,28,18 };
-	rerange(v);
-}
+//int main() {
+//	vector<int> v{ -13,-8,-12,-15,-14,35,7,-1,11,27,10,-7,-12,28,18 };
+//	rerange(v);
+//}
