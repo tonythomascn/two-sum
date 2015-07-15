@@ -110,6 +110,7 @@
     <ClCompile Include="insertinterval.cpp" />
     <ClCompile Include="insertionsortlist.cpp" />
     <ClCompile Include="insertnodeinaBST.cpp" />
+    <ClCompile Include="interleaving_positive_and negative numbers.cpp" />
     <ClCompile Include="invertbinarytree.cpp" />
     <ClCompile Include="lengthoflastword.cpp" />
     <ClCompile Include="longestincreasingcontinuoussubsequence.cpp" />

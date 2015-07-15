@@ -200,5 +200,8 @@
     <ClCompile Include="partition_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="interleaving_positive_and negative numbers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
