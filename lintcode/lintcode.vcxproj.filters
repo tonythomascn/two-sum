@@ -197,5 +197,8 @@
     <ClCompile Include="partition_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="partition_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
