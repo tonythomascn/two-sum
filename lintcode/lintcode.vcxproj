@@ -134,6 +134,7 @@
     <ClCompile Include="O(1)_check_power_of_2.cpp" />
     <ClCompile Include="palindrome_partition.cpp" />
     <ClCompile Include="partition_array_by_odd_and_even.cpp" />
+    <ClCompile Include="partition_list.cpp" />
     <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />
