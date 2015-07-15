@@ -27,24 +27,13 @@ Can you partition the array in-place and in O(n)?
 using std::vector;
 
 int partitionArray(vector<int> &nums, int k) {
-	if (0 == nums.size())
-		return 0;
 	int start = 0;
 	int end = nums.size() - 1;
 	int tmp;
-
-	int res = 0;
-	for (int i = 0; i < nums.size(); i++) {
-		if (k > nums[i])
-			res++;
-	}
-	if (res == nums.size())
-		return res;
-
 	while (start <= end) {
-		while (nums[start] < k)
+		while (start <= end && nums[start] < k)
 			start++;
-		while (nums[end] >= k)
+		while (start <= end && nums[end] >= k)
 			end--;
 		if (start < end) {
 			tmp = nums[start];
@@ -54,7 +43,7 @@ int partitionArray(vector<int> &nums, int k) {
 			end--;
 		}
 	}
-	return res;
+	return start;
 }
 
 //int main() {
