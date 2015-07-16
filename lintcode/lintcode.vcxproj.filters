@@ -209,5 +209,8 @@
     <ClCompile Include="product_of_array_exclude_itself.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="recover_rotated_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
