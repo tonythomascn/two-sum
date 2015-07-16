@@ -206,5 +206,8 @@
     <ClCompile Include="plus_one.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="product_of_array_exclude_itself.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
