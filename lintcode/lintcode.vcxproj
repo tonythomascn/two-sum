@@ -137,6 +137,7 @@
     <ClCompile Include="partition_array.cpp" />
     <ClCompile Include="partition_array_by_odd_and_even.cpp" />
     <ClCompile Include="partition_list.cpp" />
+    <ClCompile Include="plus_one.cpp" />
     <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />

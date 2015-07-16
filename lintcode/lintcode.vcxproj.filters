@@ -203,5 +203,8 @@
     <ClCompile Include="interleaving_positive_and negative numbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="plus_one.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
