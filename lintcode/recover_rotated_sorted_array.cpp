@@ -19,6 +19,10 @@ For example, the orginal array is [1,2,3,4], The rotated array of it can be [1,2
 #include "stdafx.h"
 #include <vector>
 using std::vector;
+/*
+Move the one before the minimal to the end of the array
+Time complexity O(n), extra space O(1)
+*/
 void recoverRotatedSortedArray(vector<int> &nums) {
 	int min;
 	for (int i = 0; i < nums.size(); i++) {
@@ -27,11 +31,37 @@ void recoverRotatedSortedArray(vector<int> &nums) {
 			break;
 		}
 	}
-	int minimal;
+	int temp;
 	for (int i = 0; i < min; i++) {
-		minimal = nums[0];
+		temp = nums[0];
 		nums.erase(nums.begin());
-		nums.emplace_back(minimal);
+		nums.emplace_back(temp);
+	}
+}
+/*
+After find the maximum and minimum, reverse the begin to the maximum, 
+reverse the minimum to the end, then reverse the whole array.
+Time complexity O(n), extra space O(1)
+*/
+void reverse(vector<int> &nums, int start, int end) {
+	int tmp;
+	while (start < end) {
+		tmp = nums[start];
+		nums[start] = nums[end];
+		nums[end] = tmp;
+		start++;
+		end--;
+	} 
+}
+
+void recoverRotatedSortedArray2(vector<int> &nums) {
+	for (int i = 0; i < nums.size(); i++) {
+		if (nums[i] > nums[i + 1]) {
+			reverse(nums, 0, i);
+			reverse(nums, i + 1, nums.size() - 1);
+			reverse(nums, 0, nums.size() - 1);
+			return;
+		}
 	}
 }
 //int main() {
