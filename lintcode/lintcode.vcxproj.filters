@@ -230,5 +230,8 @@
     <ClCompile Include="reverse_words_in_a_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rotate_string.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

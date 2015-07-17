@@ -148,6 +148,7 @@
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="reverse_integer.cpp" />
     <ClCompile Include="reverse_words_in_a_string.cpp" />
+    <ClCompile Include="rotate_string.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="spacereplacement.cpp" />
     <ClCompile Include="stdafx.cpp">
