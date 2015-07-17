@@ -144,6 +144,7 @@
     <ClCompile Include="remove_duplicates_from_sorted_array.cpp" />
     <ClCompile Include="remove_duplicates_from_sorted_array_2.cpp" />
     <ClCompile Include="remove_element.cpp" />
+    <ClCompile Include="remove_nth_node_from_end_of_list.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="spacereplacement.cpp" />
