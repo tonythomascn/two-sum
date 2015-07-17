@@ -141,6 +141,7 @@
     <ClCompile Include="product_of_array_exclude_itself.cpp" />
     <ClCompile Include="recover_rotated_sorted_array.cpp" />
     <ClCompile Include="removeduplicatesfromsortedlist.cpp" />
+    <ClCompile Include="remove_duplicates_from_sorted_array.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="spacereplacement.cpp" />

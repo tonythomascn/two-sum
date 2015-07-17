@@ -212,5 +212,8 @@
     <ClCompile Include="recover_rotated_sorted_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="remove_duplicates_from_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
