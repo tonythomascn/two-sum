@@ -233,5 +233,8 @@
     <ClCompile Include="rotate_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="valid_parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

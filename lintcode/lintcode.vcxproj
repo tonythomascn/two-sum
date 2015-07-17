@@ -157,6 +157,7 @@
     </ClCompile>
     <ClCompile Include="strstr.cpp" />
     <ClCompile Include="two_strings_are_anagrams.cpp" />
+    <ClCompile Include="valid_parentheses.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
