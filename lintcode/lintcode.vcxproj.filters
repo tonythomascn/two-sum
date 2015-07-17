@@ -224,5 +224,8 @@
     <ClCompile Include="remove_nth_node_from_end_of_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="reverse_integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
