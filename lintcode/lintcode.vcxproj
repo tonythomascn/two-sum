@@ -147,6 +147,7 @@
     <ClCompile Include="remove_nth_node_from_end_of_list.cpp" />
     <ClCompile Include="reverselinkedlist.cpp" />
     <ClCompile Include="reverse_integer.cpp" />
+    <ClCompile Include="reverse_words_in_a_string.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="spacereplacement.cpp" />
     <ClCompile Include="stdafx.cpp">
