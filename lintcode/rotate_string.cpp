@@ -42,3 +42,12 @@ string rotateString(string A, int offset) {
 	reverse(A, 0, A.size() - 1);
 	return A;
 }
+/*
+After get the final offset, just split the string into two parts and return the final one.
+*/
+string rotateString2(string A, int offset) {
+	if (A.empty())
+		return A;
+	offset %= A.size();
+	return A.substr(A.size() - offset, offset) + A.substr(0, A.size() - offset);
+}
