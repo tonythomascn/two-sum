@@ -28,8 +28,26 @@ int removeDuplicates(vector<int> &nums) {
 	}
 	return nums.size();
 }
+/*
+Use two pointers to scan the whole array, the left side is the final no duplicate array.
+but the final array still contains duplicate items on the right side.
+*/
+int removeDuplicates_v2(vector<int>&nums) {
+	if (nums.empty())
+		return 0;
 
-//int main() {
+	int left = 0;
+	int right = 1;
+	while (right < nums.size()) {
+		if (nums[left] != nums[right]) {
+			left++;
+			nums[left] = nums[right];
+		}
+		right++;
+	}
+	return left + 1;
+}
+//int main() { 
 //	vector<int> v{ 1, 1, 2 };
-//	int i = removeDuplicates(v);
+//	int i = removeDuplicates_v2(v);
 //}

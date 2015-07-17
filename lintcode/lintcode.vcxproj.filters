@@ -215,5 +215,8 @@
     <ClCompile Include="remove_duplicates_from_sorted_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="remove_duplicates_from_sorted_array_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
