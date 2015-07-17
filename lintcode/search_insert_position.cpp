@@ -41,3 +41,21 @@ int find(vector<int> &A, int start, int end, int target) {
 int searchInsert(vector<int> &A, int target) {
 	return find(A, 0, A.size() - 1, target);
 }
+/*
+Binary search without iteration
+*/
+int searchInsert2(vector<int> &A, int target) {
+	int low = 0;
+	int high = A.size() - 1;
+	int mid;
+	while (low <= high) {
+		mid = low + (high - low) / 2;
+		if (A[mid] == target)
+			return mid;
+		else if (A[mid] > target)
+			high = mid - 1;
+		else
+			low = mid + 1;
+	}
+	return low;
+}
