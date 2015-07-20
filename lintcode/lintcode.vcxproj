@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="addbinary.cpp" />
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="assignment_operator_overloading.cpp" />
     <ClCompile Include="binarysearch.cpp" />
     <ClCompile Include="binarytreeinordertraversal.cpp" />
     <ClCompile Include="binarytreepostordertraversal.cpp" />
