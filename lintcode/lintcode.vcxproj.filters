@@ -248,5 +248,8 @@
     <ClCompile Include="sqrt(x).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="subarray_sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

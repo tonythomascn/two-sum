@@ -160,6 +160,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="strstr.cpp" />
+    <ClCompile Include="subarray_sum.cpp" />
     <ClCompile Include="two_strings_are_anagrams.cpp" />
     <ClCompile Include="valid_parentheses.cpp" />
   </ItemGroup>
