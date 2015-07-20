@@ -154,6 +154,7 @@
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="singleton.cpp" />
     <ClCompile Include="spacereplacement.cpp" />
+    <ClCompile Include="sqrt(x).cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
