@@ -161,6 +161,7 @@
     </ClCompile>
     <ClCompile Include="strstr.cpp" />
     <ClCompile Include="subarray_sum.cpp" />
+    <ClCompile Include="subarray_sum_2.cpp" />
     <ClCompile Include="two_strings_are_anagrams.cpp" />
     <ClCompile Include="valid_parentheses.cpp" />
   </ItemGroup>
