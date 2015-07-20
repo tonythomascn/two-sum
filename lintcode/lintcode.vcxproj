@@ -150,6 +150,7 @@
     <ClCompile Include="reverse_integer.cpp" />
     <ClCompile Include="reverse_words_in_a_string.cpp" />
     <ClCompile Include="rotate_string.cpp" />
+    <ClCompile Include="search_a_2d_matrix.cpp" />
     <ClCompile Include="search_insert_position.cpp" />
     <ClCompile Include="Single Number.cpp" />
     <ClCompile Include="singleton.cpp" />
