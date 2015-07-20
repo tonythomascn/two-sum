@@ -151,6 +151,7 @@
     <ClCompile Include="rotate_string.cpp" />
     <ClCompile Include="search_insert_position.cpp" />
     <ClCompile Include="Single Number.cpp" />
+    <ClCompile Include="singleton.cpp" />
     <ClCompile Include="spacereplacement.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
