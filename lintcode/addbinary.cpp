@@ -31,7 +31,8 @@ string addBinary2(string&a, string&b) {
 	int carry = 0;
 	string result = "";
 	int ai, bj, val;
-	//iterate every digit in both string and add carry with them
+	//iterate every digit in both string from the back to the front;
+	//and add carry with them
 	for (int i = a.size() - 1, j = b.size() - 1; i >= 0 || j >= 0; i--, j--) {
 		ai = i >= 0 ? a[i] - '0' : 0;
 		bj = j >= 0 ? b[j] - '0' : 0;
@@ -39,6 +40,7 @@ string addBinary2(string&a, string&b) {
 		carry = (ai + bj + carry) / 2;
 		result.insert(result.begin(), val + '0');
 	}
+	//add the carry if exist
 	if (carry)
 		result.insert(result.begin(), '1');
 	return result;
