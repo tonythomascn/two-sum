@@ -22,7 +22,8 @@ string addBinary(string& a, string& b) {
 	int binaryb = std::stoi(b, 0, 2);
 	if (!(binarya + binaryb)) return "0";
 	//access two binary integers and transform it into a string usn g bitset
-	string s = std::bitset<8>(binarya + binaryb).to_string();
+	//16 is the size of the bitset size
+	string s = std::bitset<16>(binarya + binaryb).to_string();
 	return s.substr(s.find("1"));
 }
 
