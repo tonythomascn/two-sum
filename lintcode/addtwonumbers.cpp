@@ -102,6 +102,39 @@ public:
 	}
 };
 
+class Solution2{
+public:
+  /**
+  * @param l1: the first list
+  * @param l2: the second list
+  * @return: the sum list of l1 and l2
+  */
+  ListNode *addLists(ListNode *l1, ListNode *l2) {
+    //use a dummy head to contain the result
+    ListNode * dummy = new ListNode(0);
+    ListNode * cur = dummy;
+    int carry = 0;
+    int val = 0;
+    while (l1 || l2){
+      //check l1 and l2 is NULL or not every time
+      val = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
+      carry = val / 10;
+      cur->next = new ListNode(val % 10);
+      if (l1)
+        l1 = l1->next;
+      if (l2)
+        l2 = l2->next;
+      cur = cur->next;
+    }
+    if (carry){
+      cur->next = new ListNode(carry);
+    }
+    cur = dummy->next;
+    delete dummy;
+    return cur;
+  }
+};
+
 //int main() {
 //	Solution s;
 //	ListNode* l1 = new ListNode(2);
