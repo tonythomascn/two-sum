@@ -29,28 +29,25 @@ public:
 	int binarySearch(vector<int> &array, int target) {
 		int imax = array.size();
 		int imin = 0;
-		int imid = imin + (imax - imin) / 2;
-		while(1) {
+		int imid;
+		while(imin < imax - 1) {
+			//find midpoint without overflow
+			imid = imin + (imax - imin) / 2;
 			if (array[imid] < target) {
 				imin = imid + 1;
+				continue;
 			}
-			else if (array[imid] > target) {
+			if (array[imid] > target) {
 				imax = imid - 1;
+				continue;
 			}
-			else {
-				for (int j = imid; j >= 0; j--) {
-					if (j == 0)
-						return 0;
-					if (array[j] != target)
-						return j + 1;
-				}
-			}
-			imid = imin + (imax - imin) / 2;
-			if (imax == imin) {
-				if (array[imid] != target)
-					break;
-			}
+			//when found one, means there might be more in the array
+			imax = imid;
 		}
+		if (target == array[imin])
+		return imin;
+		if (target == array[imax])
+		return imax;
 		return -1;
 	}
 };
