@@ -29,6 +29,7 @@ public:
 		unordered_map<string, vector<int>> m;
 		vector<string> result;
 		string key;
+		//sort every string, and put index of the strings with the same key together
 		for (int i = 0; i < strs.size(); i++){
 			key = strs[i];
 			std::sort(key.begin(), key.end());
@@ -36,6 +37,7 @@ public:
 		}
 		for (auto it = m.begin(); it != m.end(); it++){
 			if (1 < it->second.size()){
+				//fetch strings whose keys have more than one member
 				for (int i = 0; i < it->second.size(); i++)
 					result.push_back(strs[it->second[i]]);
 			}
