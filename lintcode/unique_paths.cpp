@@ -65,7 +65,7 @@ public:
     }
 };
 
-class Solution2 {
+class Solution3 {
 public:
     /**
      * @param n, m: positive integer (1 <= n ,m <= 100)
