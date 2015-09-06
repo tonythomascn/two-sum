@@ -18,13 +18,17 @@ O(n x m) time and memory.
 */
 #include <string>
 #include <vector>
+#include <algorithm>
 using std::vector;
 using std::string;
+using std::max;
 class Solution {
 public:
     /**
      * @param A, B: Two string.
      * @return: the length of the longest common substring.
+     * Basic implementation, break string A into all possible substrings and
+     * find the longest substring exist or not in string B.
      */
     int longestCommonSubstring(string &A, string &B) {
       vector<string> substring;
@@ -42,8 +46,41 @@ public:
         return 0;
     }
 };
+class Solution2 {
+public:
+    /**
+     * @param A, B: Two string.
+     * @return: the length of the longest common substring.
+     * Dynamic programming, using one dimension table to contain the current longest common substring length.
+     * The longest substring length is the longest among all the iterations.
+     */
+    int longestCommonSubstring(string &A, string &B) {
+      if (A.size() < B.size())
+        return longestCommonSubstring(B, A);
+
+      vector<int> table(A.size(), 0);
+      int longest = 0;
+      int temp = 0;
+        for (int i = 0; i < B.size(); i++){
+          temp = 0;
+          for (int j = A.size() - 1; j >= 0; j--){
+            if (A[j] == B[i]){
+              table[j] = j == 0 ? 1 : table[j - 1] + 1;
+              temp = max(temp, table[j]);
+            }
+            else
+              table[j] = 0;
+              printf ("%d ", table[j]);
+          }
+          longest = max(temp, longest);
+        }
+
+
+        return longest;
+    }
+};
 int main(){
-  Solution s;
+  Solution2 s;
   string a = "ABCD";
   string b = "AB";
   printf("%d", s.longestCommonSubstring(a, b));
