@@ -22,16 +22,17 @@ public:
      * @return : Find all unique triplets in the array which gives the sum of zero.
      */
     vector<vector<int> > threeSum(vector<int> &nums) {
-        // write your code here
+        // sort the array first
         sort(nums.begin(), nums.end());
         vector<vector<int>> res;
         int length = nums.size();
-        for (int i = 0; i < length; i++){
+        for (int i = 0; i < length - 2; i++){
           //skip the duplicate in the sorted array
           if (i > 0 && nums[i] == nums[i - 1])
             continue;
           int start = i + 1;
           int end = length - 1;
+          //use two pointers to scan from both sides to find the triplet
           while (start < end){
             if (nums[start] + nums[end] == 0 - nums[i]){
               res.push_back({nums[i], nums[start], nums[end]});
